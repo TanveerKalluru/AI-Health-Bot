@@ -14,7 +14,7 @@ import tempfile
 from utils.pinata_uploader import upload_to_pinata
 
 # ─── Configuration ─────────────────────────────────────────────────────────────
-genai.configure(api_key="AIzaSyCNcDqBuahNOVuu7m20r--UKshLYz9uEnk")
+genai.configure(api_key="AIzaSyCaNeuPVOMmmAqP97JuFatXVkVW5JyW2oc")
 nltk.download('wordnet', quiet=True)
 nltk.download('stopwords', quiet=True)
 
@@ -95,7 +95,7 @@ def generateSuggestion(userinput, prediction):
     The AI model predicted the following condition: "{prediction}".
     Provide first-aid suggestions based on the predicted condition. The suggestions should be general advice that can be safely followed before seeking medical attention in 2 to 3 lines.
     """
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)
     return response.text if response else "No suggestion available."
 
